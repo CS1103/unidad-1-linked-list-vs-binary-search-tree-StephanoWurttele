@@ -8,26 +8,27 @@
 
 namespace UTEC {
 
-    struct Node {
+    struct Node2 {
         Location data;
-        Node* next;
+        Node2* next;
+        Node2(Location _data);
     };
 
     class LinkedList {
-        Node* head;
-        Node* tail;
+        Node2* head;
+        Node2* tail;
     public:
         LinkedList();
         ~LinkedList();
         int size();
         bool is_empty();
-        Node* get_head();
-        Node* get_tail();
+        Node2* get_head();
+        Node2* get_tail();
         void add_head(const Location& data);
         void add_tail(const Location& data);
         void print();
-        void insert(Node* position, const Location& data);
-        Node* search(std::string position_id);
+        void insert(int position, const Location& data);
+        Node2* search(std::string position_id);
     };
     void load_locations(LinkedList* linked_list, std::string file_name);
 }
