@@ -6,12 +6,14 @@
 #define LINKEDLISTVSBINARYTREE_BINARYTREE_H
 #include "Location.h"
 
-namespace UTEC {
+namespace UTEC{
 
     struct Node {
         Location data;
         Node* right;
         Node* left;
+
+        Node(Location _data);
     };
 
     class BinarySearchTree {
@@ -19,15 +21,16 @@ namespace UTEC {
     public:
         BinarySearchTree();
         ~BinarySearchTree();
+        void Destroytree(Node* base);
         void insert(Location data);
         void clear();
         bool is_empty();
         Node* get_root();
         Node* search(std::string position_id);
-        void print();
+        void print(Node* root);
     };
 
-    void load_locations(BinarySearchTree* linked_list, std::string file_name);
+    void load_locations(BinarySearchTree &linked_list, std::string file_name);
     void print_node(Node* node);
 }
 
